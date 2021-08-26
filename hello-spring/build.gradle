@@ -9,12 +9,12 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+	mavenCentral()	// library를
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // html을 만드는 template 엔진
+	implementation 'org.springframework.boot:spring-boot-starter-web' // 프로젝트 생성시 추가했던 dependency
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
