@@ -20,4 +20,10 @@ public class HelloController{
         model.addAttribute("name", name);
         return "hello-template";
     }
+
+    @GetMapping("hello-spring")
+    @ResponseBody// html에 나오는 body tag가 아닌 http에서 헤더와 바디로 나뉘는 바디에 데이터를 직접 넣어준다는 뜻이다
+    public String helloString(@RequestParam("name") String name){
+        return "hello " + name;
+    }
 }
