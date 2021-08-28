@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
 
-    private static Map<Long, Member> store = new HashMap<>();   // 공유되는 변수는 concurrent HashMap을 사용하는게 더 좋다
+    private Map<Long, Member> store = new HashMap<>();   // 공유되는 변수는 concurrent HashMap을 사용하는게 더 좋다
     private static long sequence = 0L;      // 공유되는 변수이므로 atomiclong을 쓰는게 좋다
 
     @Override
