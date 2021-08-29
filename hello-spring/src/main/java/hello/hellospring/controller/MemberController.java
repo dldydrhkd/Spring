@@ -11,6 +11,7 @@ public class MemberController {
 
     @Autowired  //spring container에 있는 memberService를 자동으로 연결시켜준다.
     public MemberController(MemberService memberService) {
+
         this.memberService = memberService;
     }
 }
