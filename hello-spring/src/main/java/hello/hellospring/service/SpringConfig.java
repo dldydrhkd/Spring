@@ -21,24 +21,26 @@ public class SpringConfig {
 //        this.dataSource = dataSource;
 //    }
 
-    private EntityManager em;
+//    private EntityManager em;
 
-    @Autowired
-    public SpringConfig(EntityManager em){
-        this.em = em;
-    }
+    private final MemberRepository memberRepository;
+
+    @Autowired //생성자가 하나인 경우 생략 가능
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }   // SpringDataJpa가 만들어 놓은 구현체가 등록이 된다.
 
     @Bean
     public MemberService memberService(){
 
-        return new MemberService(memberRepository());
+        return new MemberService(memberRepository);
     }
 
-    @Bean
-    public MemberRepository memberRepository(){
+//    @Bean
+//    public MemberRepository memberRepository(){
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
-    }
+//        return new JpaMemberRepository(em);
+//    }
 }
