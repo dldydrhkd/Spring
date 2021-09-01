@@ -1,5 +1,6 @@
 package hello.hellospring.service;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +32,7 @@ public class SpringConfig {
     }   // SpringDataJpa가 만들어 놓은 구현체가 등록이 된다.
 
     @Bean
-    public MemberService memberService(){
+    public MemberService memberService() {
 
         return new MemberService(memberRepository);
     }
